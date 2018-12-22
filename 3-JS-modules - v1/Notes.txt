@@ -14,7 +14,7 @@ Soln: => from third-parties , we got module standards & loaders
 ---------------------------------------------------------------
 
 - AMD ( Async Module Definition ) spec
-- UMD
+- UMD (Universal Module Definition)
 - commonJS    ( popular standard )
 
 
@@ -34,3 +34,4 @@ imp-note : Node.js runtime implemented this standard as default module standard.
 
 --------------------------------------------------------------
 
+- Modules are loaded synchronously.

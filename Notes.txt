@@ -91,9 +91,12 @@ Level-5:
 
 
 
+npm i live-server - g (To install a stage for dev which also reloads on every change)
+live-server --port=8090 simple and easy  (To start server in the desired directory
 
 
-
+Good extension for React with VS Code
+    -ReactJs code snippets
 
 
 

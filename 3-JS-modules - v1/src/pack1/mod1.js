@@ -12,7 +12,7 @@
 var oneGlobal = oneGlobal || {};
 
 (function () {
-    sapient.mod2.doWork();
+    oneGlobal.mod2.doWork();
     var i = 0;
     var o = {
         doWork: function () {

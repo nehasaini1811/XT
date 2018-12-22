@@ -64,12 +64,72 @@
 
 
 //------------------------------------------------------------------------
-
+****************DEBRAJ RAY Notes**********************
 
 RxJS ( Reactive Extensions in JavaScript)
 
 
+http://reactivex.io/
+https://rxjs-dev.firebaseapp.com/guide/observable
 
 
+**We can convert stream to promise and vice-versa with the help of adaptors.
+** Streams are not data structure and instead is like a flow and the subscriber get the snapshot of the flowing data only.
+Thus, if there is some late subscriber then suncriber can miss the portion of streamed data but in order to preserve the missout from latency, we have to use replaySubject.
 
+-> We cannot push/fetch from subscriber once the "subscriber.complete()" if called.
 
+Observable.create (Uni-cast)--> Multiple instance (when we want different subscribers to get same data individually)
+Subject (Multi-cast)--> Singleton pattern (when we want a single flow of live stream from where subscribers will get the real time data at the same time)
+
+Using streams, when we call pipe() operator then it'll create a separate stream instance (like in case for promises) or else a single stream will be subcribed
+
+2 types of stream:-
+1) Hot stream (like audio broadcasting) - Observable classes works in this fashion i.e. it keeps on transmitting irrespective of any active subscriber
+2) Cold Stream (like teaching) - Subject classes works with at least 1 subscriber
+
+With error also, complete stream stops producing (like the case of 'complete')
+
+more types of streams
+- ReplaySubject
+- BehaviorSubject
+- AsyncSubject
+
+Pure functions => takes an input and responds a new obj in output
+Functional programming enables Function composition
+
+Output of generator function is always an iterator
+
+on browser event, talks async
+
+micro callbacks (callbacks triggered by Promises/Streams) have higher priority than browser callback (Callbacks triggered by browser events).
+
+OO principles/Solid principles
+Patterns
+
+slides from slides.com:-
+- Functions 
+- Object Oriented
+- Scalable Javascript Design Patterns
+- designpatterns.pdf (2 pages)
+- react.pdf
+
+Design Patterns
+
+** Angular framework takes care to keep all it's services as singleton instances
+
+OO pattern:
+
+Builder pattern:
+JQuery is the best example of builder design pattern cz we chain function in there as well in the same fashion.
+
+- designpatterns.pdf
+
+When working with direct DOM or when we render any virtual DOM, we do update whole of virtual DOM but then the virtual DOM diff algo differentiates the exact difference from the actual DOM and renders only specific portion in real DOM.
+
+-JEST ( Unit test tool)
+
+*************REACTJS**************
+
+Good extension for React with VS Code
+ReactJs code snippets
