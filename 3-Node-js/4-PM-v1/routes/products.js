@@ -19,6 +19,12 @@ router.get('/', function (req, res, next) {
 router.get('/new', (req, res, next) => {
   res.render('product-form');
 })
+router.get('/delete', (req, res, next) => {
+  let id = req.query.id;
+  Product.remove({ _id: id }, (err, data) => {
+    res.redirect("/products");
+  })
+})
 
 router.post('/', (req, res, next) => {
   let newProduct = req.body;
