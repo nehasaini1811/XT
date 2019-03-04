@@ -19,11 +19,15 @@ mongoose.connect('mongodb://localhost/products-catalog', () => {
 });
 //----------------------------------------------------------------------
 
+// to enable CORS
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,OPTION,PATCH");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+//----------------------------------------------------------------------
 
 app.use(logger('dev'));
 app.use(express.json());
