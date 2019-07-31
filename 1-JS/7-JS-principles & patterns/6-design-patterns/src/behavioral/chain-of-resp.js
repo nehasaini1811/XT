@@ -4,6 +4,13 @@
 /*
 
 
+    chain-of-resp
+    -----------------
+
+    ==> Avoid coupling the sender of a request to it's receiver by giving more than 1 obj a chance to handle the request. Chain the 
+    receiving objects and pass the object along the chain until an object handles it.
+    ==> Middlewares in Express/js follows chain-of-resp pattern.
+
   request/method-call ---> obj-1  --> obj-2 --> obj-2.1  --> obj-3  
 
   e.g
@@ -29,11 +36,11 @@ let twoK = {
     },
     get(amount) {
         if (amount % 2000 === 0) {
-            return "2k-currency notes";
+            return Math.floor(amount / 2000) + " 2k-currency notes";
         }
         else {
             if (this.next)
-                return "2k-currency notes and " + this.next.get(amount)
+                return Math.floor(amount / 2000) + " 2k-currency notes and " + this.next.get(amount > 2000 ? amount % 2000 : amount)
             else return "Sorry"
         }
     }
@@ -48,10 +55,10 @@ let fiveH = {
     },
     get(amount) {
         if (amount % 500 === 0) {
-            return "5H -currency notes";
+            return Math.floor(amount / 500) + " 5H -currency notes";
         } else {
             if (this.next)
-                return "5H -currency notes and " + this.next.get(amount);
+                return Math.floor(amount / 500) + " 5H -currency notes and " + this.next.get(amount > 500 ? amount % 500 : amount);
         }
     }
 }
@@ -64,7 +71,7 @@ let H = {
     },
     get(amount) {
         if (amount % 100 === 0) {
-            return  "Hundred-currency notes";
+            return  Math.floor(amount / 100) + " Hundred-currency notes";
         }
     }
 }
@@ -81,4 +88,5 @@ function withdraw(amount) {
 }
 
 
-export { withdraw }
+// export { withdraw }
+module.exports = { withdraw }

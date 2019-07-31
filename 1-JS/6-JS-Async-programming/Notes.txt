@@ -75,14 +75,14 @@ https://rxjs-dev.firebaseapp.com/guide/observable
 
 **We can convert stream to promise and vice-versa with the help of adaptors.
 ** Streams are not data structure and instead is like a flow and the subscriber get the snapshot of the flowing data only.
-Thus, if there is some late subscriber then suncriber can miss the portion of streamed data but in order to preserve the missout from latency, we have to use replaySubject.
+Thus, if there is some late subscriber then subscriber can miss the portion of streamed data but in order to preserve the missout from latency, we have to use replaySubject.
 
--> We cannot push/fetch from subscriber once the "subscriber.complete()" if called.
+-> We cannot push/fetch from subscriber once the "subscriber.complete()" is called.
 
 Observable.create (Uni-cast)--> Multiple instance (when we want different subscribers to get same data individually)
 Subject (Multi-cast)--> Singleton pattern (when we want a single flow of live stream from where subscribers will get the real time data at the same time)
 
-Using streams, when we call pipe() operator then it'll create a separate stream instance (like in case for promises) or else a single stream will be subcribed
+Using streams, when we call pipe() operator then it'll create a separate stream instance (like in case for promises) or else a single stream will be subscribed
 
 2 types of stream:-
 1) Hot stream (like audio broadcasting) - Observable classes works in this fashion i.e. it keeps on transmitting irrespective of any active subscriber
@@ -94,6 +94,10 @@ more types of streams
 - ReplaySubject
 - BehaviorSubject
 - AsyncSubject
+
+new streamType() => To create stream
+next => to push/publish stream
+subscribe => To take/follow/read flowing data from the stream
 
 Pure functions => takes an input and responds a new obj in output
 Functional programming enables Function composition

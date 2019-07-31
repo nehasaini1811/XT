@@ -1,3 +1,18 @@
+
+/*
+
+
+    chain-of-resp
+    -----------------
+
+    ==> Avoid coupling the sender of a request to it's receiver by giving more than 1 obj a chance to handle the request. Chain the 
+    receiving objects and pass the object along the chain until an object handles it.
+
+*/
+
+
+//------------------------------------
+
 class ShoppingCart {
     constructor() {
         this.products = [];

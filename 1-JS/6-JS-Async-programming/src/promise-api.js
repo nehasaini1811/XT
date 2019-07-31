@@ -22,7 +22,7 @@ let hotel = {
 
 
 //---------------------------------------------------
-// hotel module
+// bar module
 //---------------------------------------------------
 
 let bar = {
@@ -55,7 +55,7 @@ let person = {
         let newPromise = Promise.all([promise1, promise2])
             .then(
                 result => {
-                    console.log("yummy with half" + result)
+                    console.log("yummy with half " + result)
                     return "HALF => BIRYANI + BEER"
                 },
                 error => console.log("oops with " + error)

@@ -40,7 +40,7 @@ D — Dependency Inversion principle
 ---------------------
 OO Patterns
 ---------------------
-
+Design Patterns are reusable solutions to commonly occuring problem in software design & architecture.
 
 1- creational
 
@@ -64,4 +64,4 @@ OO Patterns
 
 4-  Functional style pattern       
 
-
+        e.g. HOC (Higher Order Programming)

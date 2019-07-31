@@ -5,7 +5,7 @@ const Account = require('../model/Account')
 class SQLAccountRepository {
 
     constructor() {
-        console.log("SQLAccountRepository instance cteated..");
+        console.log("NoSQLAccountRepository instance cteated..");
     }
 
     loadAccount(num) {

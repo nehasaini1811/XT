@@ -83,9 +83,9 @@ let o2 = require('./mod');
 
 class Boss {
     constructor() {
-        if (Boss.intance) return Boss.intance
+        if (Boss.intance) { console.log('if condition');console.log(Boss.intance); return Boss.intance}
         else {
-            Boss.intance = this;
+            Boss.intance = this; console.log('else condition'); console.log(Boss.intance); //1st time this else condition executes and as here it assigns present obj instance ref to Boss.intance so later if condition gets excuted for next instantiation attempt
             return this
         };
     }

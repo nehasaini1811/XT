@@ -6,6 +6,7 @@
     -----------------
 
     ==> isolates complex dependency creation logic from dependent
+    ==> factory also keeps the contruction logic separate but will always create the object (completely sealed object) in 1 step.
 
 */
 

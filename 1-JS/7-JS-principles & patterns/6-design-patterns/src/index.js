@@ -60,7 +60,9 @@ console.log('-index.js-')
 
 //-----------------------------------------------------
 
-// import Sheep, { Template } from './creational/prototype'
+// // import Sheep, { Template } from './creational/prototype'
+// // const Sheep = require('./creational/prototype')
+// const {Template, Sheep} = require('./creational/prototype')
 
 // let sheep = new Sheep('baba', 15);
 // let clonedSheep = sheep.clone();
@@ -80,6 +82,9 @@ console.log('-index.js-')
 // let record11Template = record1Template.clone({ header: 'header' })
 // console.log(record11Template);
 
+// let record12Template = record11Template.clone({ body: 'section' })
+// console.log(record12Template);
+
 //-----------------------------------------------------
 
 // import AbstractFoodFactory from './creational/abstract-factory';
@@ -93,7 +98,8 @@ console.log('-index.js-')
 
 
 
-import { withdraw } from './behavioral/chain-of-resp'
+// import { withdraw } from './behavioral/chain-of-resp'
+const {withdraw} = require('./behavioral/chain-of-resp')
 
 
 let notes = withdraw(4600)
