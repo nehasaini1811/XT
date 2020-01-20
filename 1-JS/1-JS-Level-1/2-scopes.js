@@ -130,7 +130,7 @@ console.log(v)
 // -------------------------------------------------
 
 const v = 12;
-v = 13           // error
+v = 13           // TypeError: Assignment to constant variable.
 
 // -------------------------------------------------
 // Quiz-7

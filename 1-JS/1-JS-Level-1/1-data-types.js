@@ -161,13 +161,13 @@ var p1 = new Person('Nag', 35)
 */
 
 console.log(Object.isExtensible(p1))
-Object.preventExtensions(p1)
+Object.preventExtensions(p1)    //cannot add new properties to non-extensible object but can edit/delete
 
 console.log(Object.isSealed(p1))
-Object.seal(p1)
+Object.seal(p1)    //cannot add/delete properties from sealed object but can edit
 
 console.log(Object.isFrozen(p1))
-Object.freeze(p1);
+Object.freeze(p1);    //cannot add/delete/edit properties in frozen object
 
 
 p1.techSkill = 'java,js'

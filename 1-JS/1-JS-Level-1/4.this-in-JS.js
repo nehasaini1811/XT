@@ -56,7 +56,7 @@ function doTraining(sub, duration, location) {
 let tnr1 = { name: 'Nag' }
 Object.preventExtensions(tnr1);
 
-tnr.doTraining = doTraining; // Error
+tnr1.doTraining = doTraining; // Error
 
 //---------------------
 // way-1 : call()
@@ -66,10 +66,10 @@ doTraining.call(tnr1, '.js', 10, 'universe')
 //---------------------
 //way-2 :  apply()
 //---------------------
-doTraining.apply(tnr2, ['.js', 3, 'delhi'])
+doTraining.apply(tnr1, ['.js', 3, 'delhi'])
 
 //---------------------
-//way-2 : bind()
+//way-3 : bind()
 //---------------------
 let newF = doTraining.bind(tnr1, '.js');
 
