@@ -35,7 +35,7 @@ let person2 = {
 
 
 //------------------------------------
-// de-structiring 
+// de-structuring
 //------------------------------------
 
 //#1
@@ -193,18 +193,23 @@ function* gen() {
 }
 
 // #3
-function* gen() {
+function* gen02() {
     console.log('started...')
     let x = yield "give x value"
-    console.log(x);
+    console.log(x);                 //undefined by default as value is released on encountering yield
     let y = yield "give me y value"
-    console.log(y);
+    console.log(y);                 //y will hold whatever value is passed as parameter to generator next call & undefined if left empty
     let z = yield "give me z value"
     console.log(z);
-    return x + y + z
+    return x + y + z                //error | if x/y/z is undefined | if next() calls are not made with previous result value in params
 }
 
-
+// To execute generator function
+const sequence = gen02();
+sequence.next();                    //Outputs/Returns obj containing value & done
+sequence.next();
+let genResp = sequence.next().value;
+sequence.next(genResp);             //Outputs {value:"", done:false} & returns genResp to yielding statement
 //------------------------------------
 
 

@@ -6,7 +6,7 @@
 const { Observable, Subject, ReplaySubject, BehaviorSubject, fromEvent } = require('rxjs');
 const { pipe, filter, map, debounceTime } = require('rxjs/operators');
 
-/*
+/**/
 // step-1 : create Observable stream
 //-----------------------------------------------------
 const xtTrainingStream = new Subject();
@@ -71,7 +71,7 @@ xtTrainingStream
 
 //-----------------------------------------------------
 
-*/
+/**
 
 
 ///----------------------------------------------------
@@ -126,13 +126,13 @@ let unsubscribe=stream.subscribe(
 );
 console.log("after subscribe..")
 
-// unsubscribe();
+// unsubscribe();       // TypeError: unsubscribe is not a function
 
 
 
 // multi-cast stream
 
-/*
+/**
 let stream = new Subject()
 
 let i = 0;
@@ -159,7 +159,7 @@ setTimeout(() => {
 
 }, 3000)
 
-*/
+/**/
 
 /*
 

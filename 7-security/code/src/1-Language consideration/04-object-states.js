@@ -17,28 +17,28 @@ var o = {
 };
 
 console.log("base object:", o);
-console.log();
+console.log(o);
 
 console.log("##--- Object.preventExtensions() ---##");
 attemptWrite(o, "d", "D");
 Object.preventExtensions(o);
 console.log("...Preventing extensions on the base object...");
 attemptWrite(o, "e", "E");
-console.log();
+console.log(o);
 
 console.log("##--- Object.seal() ---##");
 attemptDelete(o, "d");
 console.log("...Sealing the base object...");
 Object.seal(o);
 attemptDelete(o, "c");
-console.log();
+console.log(o);
 
 console.log("##--- Object.freeze() ---##");
 attemptWrite(o, "c", 3);
 console.log("...Freezing the base object...");
 Object.freeze(o);
 attemptWrite(o, "b", 2);
-console.log();
+console.log(o);
 
 
 // helper functions

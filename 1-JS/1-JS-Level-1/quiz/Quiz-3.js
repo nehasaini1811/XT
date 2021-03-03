@@ -71,7 +71,7 @@ let arr2 = [3, 4, 5]
 
 // find elements in arr1 which are not in arr2?
 
-
+let arr1uniqueElem = arr1.filter(item => arr2.every(arrItem => arrItem))
 
 
 

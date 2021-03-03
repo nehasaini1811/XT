@@ -174,6 +174,31 @@ p1.techSkill = 'java,js'
 delete p1.age;
 p1.age = 35;
 
+// Customizable Object properties
+let o = { x:12, y:13 };
+Object.defineProperty(o, 'x', {        //define 1 property at a time
+    writable: false,                   //writable false restricts from making changes to value associated with the property
+    configurable: false,               //configurable false restricts from making any changes to object's property except for value & writable
+    enumerable: false                  //enumerable false restricts from listing the object property through Object.keys() or For-in loop
+});
+
+var obj = {};
+Object.defineProperties(obj, {         //define multiple properties together
+  'property1': {
+    value: true,
+    writable: true
+  },
+  'property2': {
+    value: 'Hello',                    //The value associated with the property. Can be any valid JavaScript value (string, number, object, function, etc)
+    writable: false
+  }
+  // etc. etc.
+});
+
+// "For-In loop" to loop through Object Properties
+for (property in o) {
+    console.log(property + " => " , o[property]);
+}
 
 //-----------------------------------------------------------------
 // literal-style object(s)

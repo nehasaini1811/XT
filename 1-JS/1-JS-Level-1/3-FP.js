@@ -202,8 +202,8 @@ learnFunc()
 
 /*
 
-        A closure is a function having access to the parent scope, 
-        even after the parent function has closed.
+        A closure is an inner function having access to the parent scope, 
+        even after the parent function has closed/gone out of scope.
 
 */
 
@@ -315,8 +315,8 @@ for (var i = 0; i < 2; i++) {
         arr.push(f)
 }
 
-arr[0]();
-arr[1]();
+arr[0]();               //2
+arr[1]();               //2
 
 
 

@@ -19,7 +19,7 @@ http://kangax.github.io/compat-table/es6/
     - server-side language on Node.js
     +
     - Mobile Native Appln with tool support
-    - Desktop Appln with Electron
+    - Desktop Appln with Electron, React Native
 ----------------------------------------------------------------------
 
  .js Features
@@ -91,7 +91,7 @@ Level-5:
 
 
 
-npm i live-server - g (To install a stage for dev which also reloads on every change)
+npm install -g live-server (To install a stage for dev which also reloads on every change)
 live-server --port=8090 simple and easy  (To start server in the desired directory
 
 
