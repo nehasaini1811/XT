@@ -181,6 +181,11 @@ Object.defineProperty(o, 'x', {        //define 1 property at a time
     configurable: false,               //configurable false restricts from making any changes to object's property except for value & writable
     enumerable: false                  //enumerable false restricts from listing the object property through Object.keys() or For-in loop
 });
+// Writable: If false, the value of the property can not be changed.
+
+// Configurable: If false, any attempts to delete the property or change its attributes (Writable, Configurable, or Enumerable) will fail.
+
+// Enumerable: If true, the property will be iterated over when a user does for (var prop in obj){} (or similar).
 
 var obj = {};
 Object.defineProperties(obj, {         //define multiple properties together

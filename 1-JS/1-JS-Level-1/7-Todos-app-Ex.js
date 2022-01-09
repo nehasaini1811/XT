@@ -9,7 +9,7 @@ class Todo {
         this.id = Todo.nextId; // auto_increment
         this.title = title;
         this.completed = false
-        this.date = date
+        this.date = date || new Date()
     }
 }
 Todo.nextId = 0;

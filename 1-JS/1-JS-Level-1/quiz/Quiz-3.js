@@ -13,8 +13,9 @@ let txns = [
 
 let txnLib = {
     filter: function (inp, predicate) {
-        for (let i = 0; i < txns.length; i++) {
-            let txn = txns[i];
+        let out = [];
+        for (let i = 0; i < inp.length; i++) {
+            let txn = inp[i];
             if (predicate(txn))
                 out.push(txn)
         }
@@ -48,7 +49,7 @@ let txnService = {
 
     },
     getTxnsV2: function (minAmount, maxAmount) {
-        txnLib.filter(txns, txn => txn.amoun >= minAmount && txn.amount <= maxAmount);
+        txnLib.filter(txns, txn => txn.amount >= minAmount && txn.amount <= maxAmount);
     }
 }
 //------------------------------------------------
@@ -71,7 +72,9 @@ let arr2 = [3, 4, 5]
 
 // find elements in arr1 which are not in arr2?
 
-let arr1uniqueElem = arr1.filter(item => arr2.every(arrItem => arrItem))
+let arr1uniqueElem = arr1.filter(item => arr2.every(arrItem => arrItem))    //incorrect
+let arr1uniqueElem = arr1.filter(item => !arr2.find(arr2Item => arr2Item === item))     //correct
+let arr1uniqueElem = arr1.filter(item=> !arr2.includes(item));
 
 
 

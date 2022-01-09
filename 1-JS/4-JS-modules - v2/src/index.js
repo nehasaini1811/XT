@@ -17,13 +17,14 @@ let arr2 = [3, 4, 5];
 import lodash from 'lodash'
 console.log(lodash.difference(arr1, arr2));
 
-// require('./hotel/menu')
+const primaryItem  = require('./hotel/menu').default
+const {item1,item2}  = require('./hotel/menu')
 // or
 
 // import primaryItem,{item1,item2} from './hotel/menu'
-// console.log(primaryItem)
-// console.log(item1)
-// console.log(item2)
+console.log(primaryItem)
+console.log(item1)
+console.log(item2)
 
 
 // import primaryItem,{item1 as veg,item2 as nveg} from './hotel/menu'
@@ -32,16 +33,16 @@ console.log(lodash.difference(arr1, arr2));
 // console.log(nveg)
 
 
-import primaryItem, * as items from './hotel/menu'
-console.log(primaryItem)
-console.log(items.item1)
-console.log(items.item2)
+// import primaryItem, * as items from './hotel/menu'
+// console.log(primaryItem)
+// console.log(items.item1)
+// console.log(items.item2)
 
-items.item1 = null; // error , cant mutate reference
-items.item1.price = 50;
+// items.item1 = null; // error , cant mutate reference
+// items.item1.price = 50;
 
 
-import List, { ListTheme } from './components/List';
+// import List, { ListTheme } from './components/List';
 
 
 
