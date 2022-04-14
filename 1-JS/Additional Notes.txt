@@ -1,0 +1,128 @@
+http://latentflip.com/loupe/?code=CmNvbnNvbGUubG9nKCJIaSEiKTsKCgpzZXRUaW1lb3V0KGZ1bmN0aW9uKCl7CiAgICBjb25zb2xlLmxvZygidGVzdCIpCn0sMTApOwpjb25zb2xlLmxvZygiV2VsY29tZSB0byBsb3VwZS4iKTs%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
+https://www.w3schools.com/js/js_function_closures.asp
+https://www.w3schools.com/js/js_function_bind.asp
+https://owasp.org/www-community/attacks/xss/
+https://owasp.org/www-community/attacks/DOM_Based_XSS
+https://www.geeksforgeeks.org/what-are-the-microtask-and-macrotask-within-an-event-loop-in-javascript/
+https://extendscript.docsforadobe.dev/extendscript-tools-features/operator-overloading.html
+https://www.geeksforgeeks.org/prototypal-inheritance-using-__proto__-in-javascript/#:~:text=The%20Prototypal%20Inheritance%20is%20a,an%20object%2C%20we%20use%20Object.
+https://javascript.info/prototype-inheritance
+https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/
+https://blog.openreplay.com/how-to-use-props-to-pass-data-to-child-components-in-react-js
+https://bradfrost.com/blog/post/atomic-web-design/
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#http_is_stateless_but_not_sessionless
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
+https://developer.mozilla.org/en-US/docs/Web/SVG
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs
+https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
+https://medium.com/@luisvieira_gmr/building-large-scale-react-applications-in-a-monorepo-91cd4637c131
+https://reactjs.org/docs/code-splitting.html
+https://reactjs.org/docs/profiler.html
+https://www.blog.duomly.com/what-is-the-difference-between-shadow-dom-and-virtual-dom/
+
+How to debug in React
+
+
+var obj ={a:{b:"test"}}
+const {a:{b}} = obj
+
+
+
+const arr = [1,2,3,4,5];
+const delay = 2000;
+              
+arr.forEach(
+    (el, i) => {
+      setTimeout(() => console.log(el), delay * i);
+    }
+);
+
+DOM manipulation is the most in performance
+React.memo()
+PureComponent
+recursive method to travwerse multi child tree structure
+
+When you call a function that is passed as an argument, it is referred to as a callback
+  callback()
+
+
+
+Promise: push based mechnism to handle async call, we dont call the next rountine after completion of first reoutine, instead
+we expect result to return the data
+SINGLE	MULTIPLE
+Pull	Function	Iterator
+Push	Promise  	Observable
+
+The prototype is an object that is associated with every functions and objects by default in JavaScript,
+where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
+
+
+console.log("Hi!");
+setTimeout(function(){
+    console.log("2")
+},0);
+
+setTimeout(function(){
+    new Promise(function(resolve, reject)
+    {console.log("promise");  resolve();});
+},0);
+ new Promise(function(resolve, reject)
+    {console.log("promise2");  resolve();});
+    
+    console.log("Welcome to loupe.");
+
+---------------------------------------------------------------------------------------------------------------------
+
+function top(){
+	let test = "test";
+	function inner(){
+		console.log("value=>", test);
+	}
+	return inner;
+}
+
+calling = top();
+calling();
+A{fly()}
+B{walk:}
+
+A.__proto = B
+A.walk
+
+let test = [1,2,3];
+typeOf
+
+var a= 10; 
+typeOf "number"
+
+parent
+const Parent =()=>{
+const [show,setShow] = React.useState(true);
+
+return (
+ <div>
+	<Child setShow={setShow}/>
+ </div>
+)
+}
+const ghh= useref
+localstorage
+ref= ghh
+@media (min-width: 768px and orientat
+const hhb = useMemo(compute, [dependecy])
+useEffect(()=>{return },[gggfg])
+const name createContext
+
+const Child=(props)=>{
+const handleClick =(){
+ props.setShow(false);
+}
+return (
+<button onClick={handleClick} >click</button>
+}
+
+const [a,...rest]= [1,2,3];
+
+[...test]
