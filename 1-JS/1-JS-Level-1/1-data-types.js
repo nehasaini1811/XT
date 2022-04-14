@@ -110,6 +110,7 @@ function Person(name, age) {
     //     console.log('im ' + this.age + " old ")
     // }
 }
+
 Person.prototype.sayName = function () {
     console.log('im ' + this.name)
 }
