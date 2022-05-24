@@ -94,6 +94,7 @@ longRunning();
 
 
 // .js event-loop never blocked while IO happening thru browser APIs
+// But event-loop will get blocked if some computation is happening.
 
 
 console.log('init.....')
@@ -124,10 +125,11 @@ function teach() {
     let tnrName = "Nag"; // this data will get move to Heap memory
     try {
         console.log(tnrName + "-teaching .js ");
-        //throw new Error('js-error')
+        //throw new Error('js-error')           //This error will be caught by catch block
         setTimeout(function () {
             console.log(tnrName + '-teaching react');
-            //throw new Error('react-error')
+            //throw new Error('react-error')    //This error won't be caught by catch block due to timeout of 5 sec
+                                                //as timer-handled in web APIs block & after 5 sec, try/catch would have already executed
             console.log('teaching react ends');
         }, 5000);
         console.log("teaching .js ends..");

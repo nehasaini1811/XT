@@ -16,8 +16,9 @@
          b. heap                --> to hold objects
 
     2. web APIs ( e.g DOM, XHR, Timer , HTML5 APIs,.. )  ==> w3c recommendation
+    [=>TimeOut time is not a guranteed time for exec but a min time for exec]
 
-    3. Event-Queue
+    3. Event-Queue (Callback Queue)
 
     4. Event-Loop
 
@@ -32,11 +33,17 @@
 
     summary :
 
-    on event, event-handler always executes async by an event-loop
+    -on event, event-handler always executes asynchronously by an event-loop.
+    -.js event-loop never blocked while IO happening thru browser APIs
+    -But event-loop will get blocked if some computation is happening.
+    -Callbacks always execute asynchronously and each async exec is a fresh execution n JS runtime
+
+    Web Workers- Allows delegation of JavaScript evaluation to background threads, allowing these activities to prevent slowing down interactive events.
+     i.e. Method of running scripts in background, isolated from the web page.
 
     ----------------------------------------------------------------------
 
-    Async APIs
+    Async APIs (These are ES spec but not browser APIs(not w3c recommendation))
     -----------
 
       - Promise API   ( ES6 )
@@ -66,7 +73,7 @@
 //------------------------------------------------------------------------
 ****************DEBRAJ RAY Notes**********************
 
-RxJS ( Reactive Extensions in JavaScript)
+RxJS ( Reactive Extensions For JavaScript)
 
 
 http://reactivex.io/
@@ -91,15 +98,16 @@ Using streams, when we call pipe() operator then it'll create a separate stream 
 With error also, complete stream stops producing (like the case of 'complete')
 
 more types of streams
-- ReplaySubject
-- BehaviorSubject
-- AsyncSubject
+- ReplaySubject - records multiple values from the Observable execution and replays them to new subscribers. It can send old values to new subscribers, but it can also record a part of the Observable execution.
+- BehaviorSubject - stores latest value emitted to its consumers, and whenever a new Observer subscribes, it will immediately receive the "current value" from the BehaviorSubject.
+- AsyncSubject - only the last value of the Observable execution is sent to its observers, and only when the execution completes.
 
 new streamType() => To create stream
 next => to push/publish stream
 subscribe => To take/follow/read flowing data from the stream
+pipe => A Pipeable Operator is a function that takes an Observable as its input and returns another Observable. It is a pure operation: the previous Observable stays unmodified.
 
-Pure functions => takes an input and responds a new obj in output
+Pure functions => takes an input and responds a new obj in output || Always responds with same output for a given input
 Functional programming enables Function composition
 
 Output of generator function is always an iterator

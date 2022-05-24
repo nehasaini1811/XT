@@ -9,7 +9,7 @@ class Todo {
         this.id = Todo.nextId; // auto_increment
         this.title = title;
         this.completed = false
-        this.date = date
+        this.date = date || new Date()
     }
 }
 Todo.nextId = 0;
@@ -34,7 +34,7 @@ class TodosService {
     }
     completeAll() {
         let isAllCompleted = this.todos.every(todo => todo.completed)
-        this.todos = this.todos.map(todo => todo.id === id ? Object.assign({}, todo, { completed: !isAllCompleted }) : todo)
+        this.todos = this.todos.map(todo => Object.assign({}, todo, { completed: !isAllCompleted }))
     }
     deleteTodo(id) {
         this.todos = this.todos.filter(todo => todo.id !== id)
@@ -47,6 +47,15 @@ class TodosService {
     }
 }
 
+// if we want to add an class member function later
+TodoServices.prototype.clearCompleted = function() { 
+    this.todos = this.todos.filter(todo => !todo.completed)
+}
+// if we want to change "completeAll" implementation with spread operator
+TodosService.prototype.completeAll = function() {
+    let isAllCompleted = this.todos.every( todo => todo.completed);
+    this.todos = this.todos.map( todo => ({ ...todo, completed: !isAllCompleted }));
+}
 //------------------------------------------
 
 const service = new TodosService();

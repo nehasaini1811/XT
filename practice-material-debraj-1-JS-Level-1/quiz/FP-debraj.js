@@ -22,8 +22,10 @@ console.log(vegMenu);
 let arr1 = [1,2,3]
 let arr2 = [3,4,5]
 
+let uniqueArr1 = arr1.filter(arr1Item => arr2.indexOf(arr1Item) === -1);
 // let uniqueArr1 = arr1.filter(arr1Item => arr1Item !== arrIteratee(arr2));
 
 // let arrIteratee = (item, arr) => {}
+// OR
 let uniqueArr1 = _.difference(arr1, arr2);
 console.log(uniqueArr1);

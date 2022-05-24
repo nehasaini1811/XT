@@ -52,6 +52,26 @@ why we need ?
 
  --> to manage build-cycle ( i.e start, compile , test , build-for-production , start-dev-server, ...)
 
+imp-note:   *NPM treats complete project as 1 package
+            *require/import - if not specified local path, then will search for "node_modules" starting from current directory until root directory
+
+private property in package.json
+"private": true         //If set true, then won't be able to publish package
+package/project versions in package.json
+"version": "1.0.0"
+which is explained as "major.minor.patch" version
+
+**NPM commands**
+ npm login
+ npm publish            //"1.0.0" For publish/ re-publish the new version
+ npm install            // Will install packages in node_modules in current directory
+ npm version patch      //"1.0.1" This command will automatically increment the patch version by 1 unit in the package.json
+ npm version minor      //"1.1.0"
+ npm version major      //"2.0.0"
+ npm update             // To update the package versions to whatever changed value mentioned in package.json or latest patch version if "^" tild operator put before version
+                        //e.g. "sapient-greet": "^1.0.0" => "1.0.1"
+ npm get prefix         // gets global installation location/directory for npm
+
 --------------------------------------------------------------
 
 
@@ -61,7 +81,7 @@ why we need ?
 
     e.g
     
-    => browserify
+    => browserify       // bundles commonJS modules into ES module standard
     => webpack
      
 

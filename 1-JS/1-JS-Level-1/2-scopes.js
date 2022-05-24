@@ -29,8 +29,8 @@ console.log("-scopes-");
     -------------------------------------------------
     ==>every javascript has one global-scope default 
     -------------------------------------------------
-    ==> every function invocation alos create new-scope,
-        which is child of in-which scope that function has declared/created
+    ==> every function invocation allocates/create new-scope,
+        which is child of scope in-which that function has been declared/created
     -------------------------------------------------
 
 */
@@ -39,7 +39,7 @@ console.log("-scopes-");
 // Quiz-1
 // -------------------------------------------------
 
-console.log(v)
+console.log(v)      //undefined
 var v = 12;
 
 // -------------------------------------------------
@@ -50,7 +50,7 @@ var v = 12;
 
 var v = 12;
 function f1() {
-    console.log(v)
+    console.log(v)      //undefined
     var v = 13;
 }
 f1(); // f1-scope <== global-scope
@@ -65,7 +65,7 @@ f1(); // f1-scope <== global-scope
 var v = 12;
 function f1() {
     function f2() {
-        console.log(v)
+        console.log(v)      //undefined
     }
     f2();
     var v = 13;
@@ -90,7 +90,7 @@ var v = 12;
 if (true) {
     var v = 13; // No block-scope
 }
-console.log(v)
+console.log(v)      //13
 
 
 // -------------------------------------------------
@@ -121,11 +121,11 @@ let v = 13;      // syntax-error
 
 // -------------------------------------------------
 
-var v = 12;
+let v = 12;
 if (true) {
     let v = 13;  // block-scoped
 }
-console.log(v)
+console.log(v)      //12
 
 // -------------------------------------------------
 
@@ -164,7 +164,7 @@ function func() {
 }
 func();
 
-console.log(i);
+console.log(i);      //100
 
 
 // ----------------------------------------------------------------

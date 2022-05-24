@@ -109,3 +109,27 @@ console.log(person.name)
 
 
 // -------------------------------------------
+
+class Car {
+
+    constructor (name) {
+      this._name = name;
+    }
+
+    set name (name) {
+      this._name = name;
+    }
+
+    get name () {
+      return this._name;
+    }
+
+}
+let car = new Car('Tesla');
+console.log(car.name); // Tesla
+car.name = 'BMW';
+console.log(car.name); // BMW
+//   I use ‘_’ prefix to create a (tmp) field to store name property.
+
+
+// -------------------------------------------

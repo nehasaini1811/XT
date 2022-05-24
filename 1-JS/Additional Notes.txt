@@ -22,9 +22,9 @@ https://reactjs.org/docs/code-splitting.html
 https://reactjs.org/docs/profiler.html
 https://www.blog.duomly.com/what-is-the-difference-between-shadow-dom-and-virtual-dom/
 
-Variables declared with let can be reassigned, but canâ€™t be redeclared in the same scope.
-Variables declared with const must be assigned an initial value, but canâ€™t be redeclared in the same scope, 
-and canâ€™t be reassigned.
+Variables declared with let can be reassigned, but can’t be redeclared in the same scope.
+Variables declared with const must be assigned an initial value, but can’t be redeclared in the same scope, 
+and can’t be reassigned.
 How to debug in React
 
 var obj ={a:{b:"test"}}

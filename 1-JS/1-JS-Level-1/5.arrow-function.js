@@ -61,6 +61,11 @@ nums.sort((x, y) => x - y)
 
 // -------------------------------------------
 // use 2 : to capture 'this'
+// In classic function expressions, the 'this' keyword is bound to different values based on the context in which the function is called. 
+// Whereas arrow functions use the value of 'this' in their lexical scope. This leads to very different behaviour.
+// What’s the difference between context and scope? The context is (roughly) the object that calls the function. 
+// And the scope is all the variables visible to a function where it is defined. 
+// One cares about how it is called, the other cares about how it is defined.
 // -------------------------------------------
 
 let tnr = {
@@ -71,7 +76,7 @@ let tnr = {
         //     console.log(this.name + " answering " + q);
         // }
         //or
-        let askQues = (q) => {
+        let askQues = (q) => {          //inner function defined in member function scope with =>
             console.log(this.name + " answering " + q);
         }
         console.log("teaching ends");
@@ -107,7 +112,7 @@ arrFunc();
 let o1 = {
     name: 'One',
     regFunc: regFunc,
-    arrFunc: arrFunc
+    arrFunc: arrFunc            //member function defined in global scope with =>
 }
 o1.regFunc();
 o1.arrFunc();
@@ -173,12 +178,14 @@ function Person(name, age) {
     this.age = age;
 
     // let self=this;
+    // regular classical functions bind 'this' with context of the callee so, it'll be bind to global windows obj as called within global 'setInterval' method
     // let incAge = function () {
     //     console.log(this);  
     //     self.age++;
     //     console.log(self.name + " : " + self.age);
     // }
 
+    // Arrow function is suitable here as it's not an object method but only a local method to be called with global 'setInterval' method
     let incAge = () => {
         console.log(this);
         this.age++;

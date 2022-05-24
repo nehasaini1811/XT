@@ -55,10 +55,12 @@ let person = {
         let newPromise = Promise.all([promise1, promise2])
             .then(
                 result => {
+                    console.log("Resolved Promises: ", result)      //array of resolved messages i.e. ["biryani", "BEER"]
                     console.log("yummy with half " + result)
                     return "HALF => BIRYANI + BEER"
                 },
-                error => console.log("oops with " + error)
+                // rejects immediately upon any of the input promises rejecting or non-promises throwing an error
+                error => console.log("oops with Rejected Promises: " + error)   //will reject with first rejection message / error.
             )
 
         newPromise.then(result => {
