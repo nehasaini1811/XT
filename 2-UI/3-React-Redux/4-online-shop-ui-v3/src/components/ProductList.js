@@ -36,7 +36,7 @@ class ProductList extends Component {
                 {this.renderProducts()}
                 {/* <hr /> */}
                 {/* <button className="btn btn-link" onClick={e => this.props.history.goBack()}>back</button> */}
-            </div>
+            </div>  
         );
     }
 }

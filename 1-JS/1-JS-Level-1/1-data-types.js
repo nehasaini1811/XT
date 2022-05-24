@@ -99,7 +99,7 @@ var ref = new Constructor()
 //-----------------------------
 // class
 //-----------------------------
-
+//class itself doesnot have any meaning unless object is created so for taking the object's reference we use this keyword.
 function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -119,7 +119,7 @@ Person.prototype.sayAge = function () {
 }
 
 var p1 = new Person('Nag', 35)
-
+var p2 = new Person('Nag', 35)
 
 
 

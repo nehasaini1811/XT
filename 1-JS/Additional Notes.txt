@@ -22,13 +22,13 @@ https://reactjs.org/docs/code-splitting.html
 https://reactjs.org/docs/profiler.html
 https://www.blog.duomly.com/what-is-the-difference-between-shadow-dom-and-virtual-dom/
 
+Variables declared with let can be reassigned, but can’t be redeclared in the same scope.
+Variables declared with const must be assigned an initial value, but can’t be redeclared in the same scope, 
+and can’t be reassigned.
 How to debug in React
-
 
 var obj ={a:{b:"test"}}
 const {a:{b}} = obj
-
-
 
 const arr = [1,2,3,4,5];
 const delay = 2000;
@@ -47,7 +47,7 @@ recursive method to travwerse multi child tree structure
 When you call a function that is passed as an argument, it is referred to as a callback
   callback()
 
-
+PROMISE represents the completion of an asynchronous function. It is an object that might return a value in the future.
 
 Promise: push based mechnism to handle async call, we dont call the next rountine after completion of first reoutine, instead
 we expect result to return the data
@@ -57,7 +57,6 @@ Push	Promise  	Observable
 
 The prototype is an object that is associated with every functions and objects by default in JavaScript,
 where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
-
 
 console.log("Hi!");
 setTimeout(function(){
@@ -126,3 +125,45 @@ return (
 const [a,...rest]= [1,2,3];
 
 [...test]
+
+flat array of any size , eg:-> let arr =[1,2,3,[4],[5,[6,7],8]]
+function recur(data){
+   return[].concat.apply([],data.map(item=>{ 
+    if (Array.isArray(item)){
+         return recur(item); 
+    }
+    else    
+     return item;
+})) }
+
+What is the precedence of css for <div class="test" id="test"></div>
+<style>
+#test{color: red;}  <--- always ID
+div{color: blue;}
+.test{color: yellow;}
+</style>
+
+
+https://www.javascripttutorial.net/javascript-primitive-vs-reference-values/
+https://www.geeksforgeeks.org/what-are-the-microtask-and-macrotask-within-an-event-loop-in-javascript/
+https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
+https://javascript.info/prototype-inheritance
+https://www.geeksforgeeks.org/reactjs-reactdom/
+https://www.javascripttutorial.net/object/3-ways-to-copy-objects-in-javascript/
+
+function teach(){
+ let test = "123";
+ function study(){
+ 	console.log(test);
+ }
+ 
+  function study2(){
+ 	console.log(test);
+ }
+ 
+ return {
+ 	 one: study,
+   two: study2
+ }
+ 
+}

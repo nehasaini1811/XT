@@ -10,7 +10,7 @@ console.log("-scopes-");
     ------------------------------------------------------------------
 
     memory/stack-frame which contains arg & local variables
-    to execure set of instructions
+    to execute set of instructions
 
     phase-1: creation/push
     ----------------------

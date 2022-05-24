@@ -190,9 +190,8 @@ function teach() {
         return learn;
 }
 
-let learnFunc = teach()
-learnFunc()
-learnFunc()
+let learnFunc2 = teach()
+learnFunc2()
 
 //------------------------------------------------------
 
